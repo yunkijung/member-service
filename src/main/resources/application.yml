@@ -23,7 +23,7 @@ spring:
   application:
     name: member-service
   profiles:
-    active: local
+    active: dev
   datasource:
     url: ${DB_URL}
     username: ${DB_USERNAME}
