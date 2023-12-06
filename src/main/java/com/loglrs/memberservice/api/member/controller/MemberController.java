@@ -240,5 +240,15 @@ public class MemberController {
         return new ResponseEntity(resultMap, HttpStatus.OK);
     }
 
+    @GetMapping("/health_check")
+    public ResponseEntity status() {
+        return new ResponseEntity(String.format(
+                "Member Service is working"
+                + ", port(local.server.port)=" + env.getProperty("local.server.port")
+                + ", port(server.port)=" + env.getProperty("server.port")
+                + ", token secret=" + env.getProperty("token.secret")
+                + ", token expiration time=" + env.getProperty("token.expiration_time")
+        ), HttpStatus.OK);
+    }
 
 }

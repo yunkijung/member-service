@@ -73,3 +73,10 @@ cloud:
     credentials:
       accessKey: ${IAM_ACCESS_KEY}
       secretKey: ${IAM_SECRET_KEY}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans
+
